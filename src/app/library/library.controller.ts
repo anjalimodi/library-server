@@ -31,13 +31,4 @@ export class LibraryController {
         return await this.libraryService.searchFileInformationByEmail(input)
     }
 
-    @Post('addBook')
-    async addBookDataHandler(@Body() input:addBookDataInput){
-        return await this.libraryService.addBookData(input)
-    }
-
-    @Post('addMagazine')
-    async addMagazineData(@Body() input:addMagazineDataInput){
-        return await this.libraryService.addMagazinesData(input)
-    }
 }

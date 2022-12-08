@@ -107,51 +107,5 @@ export class LibraryService {
       
     }
 
-    async addBookData(input){
-      try{
-        let fileContent="title,isbn,authors,description\n"
-        fileContent+=input.csvData
-        let writeBookStatus=await new Promise((resolve, reject) => {
-          fs.writeFile("src/assets/exportBook.csv",fileContent,(err)=>{
-            if(err){
-              return reject(err)
-            }
-            resolve("Book csv file exported successfully")
-            
-          })
-          })
-          .then((res:string)=>{
-          return res
-        })
-    
-        return writeBookStatus
-    
-      }catch(error){
-        console.log("Add Book data error",error)
-      }
-  }
-
-  async addMagazinesData(input){
-    try{
-      let fileContent="title,isbn,authors,publishedAt\n"
-      fileContent+=input.csvData
-      let writeMagazineStatus=await new Promise((resolve, reject) => {
-      fs.writeFile("src/assets/exportMagazine.csv",fileContent,(err)=>{
-        if(err){
-          return reject(err)
-        }
-        resolve("Magazine csv file exported successfully")
-        
-      })
-      })
-      .then((res:string)=>{
-      return res
-    })
-
-    return writeMagazineStatus
-
-    }catch(error){
-      console.log("Add Magazine data error",error)
-    }
-  }
+   
 }
