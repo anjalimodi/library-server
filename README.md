@@ -17,5 +17,8 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+
+#creating dist folder
+$ npm run build
 ```
 
